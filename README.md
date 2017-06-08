@@ -1,0 +1,1 @@
+# npm-timestamp-generator
