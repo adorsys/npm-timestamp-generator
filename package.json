@@ -1,0 +1,29 @@
+{
+  "name": "a-timestamp-generator",
+  "version": "0.0.1",
+  "description": "A generator for timestamps",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tap src/*.test.js -Rspec",
+    "test:watch": "onchange 'src/*.js' -i -- npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adorsys/npm-timestamp-generator.git"
+  },
+  "keywords": [
+    "generator",
+    "timestamp"
+  ],
+  "author": "Gunnar Radzom <gra@adorsys.de> (http://adorsys.de/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/adorsys/npm-timestamp-generator/issues"
+  },
+  "homepage": "https://github.com/adorsys/npm-timestamp-generator#readme",
+  "devDependencies": {
+    "onchange": "3.2.1",
+    "tap": "10.3.3",
+    "testdouble": "3.0.0"
+  }
+}
