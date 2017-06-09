@@ -5,6 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "commit": "git-cz ",
+    "coverage": "npm run test -- --cov --coverage-report=text",
+    "coverage:html": "npm run test -- --cov --coverage-report=html",
+    "coverage:check": "npm run coverage -- --check-coverage --100",
     "test": "tap src/*.test.js -Rspec",
     "test:watch": "onchange 'src/*.js' -i -- npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -14,7 +17,7 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run test && npm run coverage:check"
     }
   },
   "repository": {
