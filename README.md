@@ -7,3 +7,25 @@
 [![license](https://img.shields.io/github/license/adorsys/npm-timestamp-generator.svg?style=flat-square)](https://github.com/adorsys/npm-timestamp-generator/blob/master/LICENSE)
 
 A generator for creating timestamps.
+
+## Installation
+
+````
+npm install a-timestamp-generator 
+````
+
+## Usage
+
+``` js
+const { generateTimestamp } = require('a-timestamp-generator');
+
+const firstTimestamp = generateTimestamp();
+const secondTimestamp = generateTimestamp();
+
+firstTimestamp < secondTimestamp // is always true
+```
+
+## Tests
+
+Install dev dependencies with `npm install`, then `npm test`.
+
