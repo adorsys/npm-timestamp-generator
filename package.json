@@ -2,16 +2,18 @@
   "name": "a-timestamp-generator",
   "version": "0.0.0-sementically-released",
   "description": "A generator for timestamps",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "clean": "rm -rf coverage .nyc_output",
+    "prebuild": "rimraf dist",
+    "build": "babel --out-dir dist --copy-files --ignore *.test.js src",
+    "clean": "rimraf dist coverage .nyc_output",
     "commit": "git-cz ",
     "coverage": "tap --coverage-report=html",
     "coverage:check": "tap --coverage-report=lcov --check-coverage --100",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
-    "test": "tap src/*.test.js -Rspec",
-    "test:watch": "onchange 'src/*.js' -i -- npm test",
-    "test:coverage": "tap src/*.test.js -Rspec --cov",
+    "test": "npm run build && tap src/*.test.js -Rspec",
+    "test:watch": "onchange 'src/*.js' -i -- npm t",
+    "test:coverage": "npm t -- --cov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
@@ -30,6 +32,11 @@
     "generator",
     "timestamp"
   ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "author": "Gunnar Radzom <gra@adorsys.de> (http://adorsys.de/)",
   "license": "Apache-2.0",
   "bugs": {
@@ -37,11 +44,16 @@
   },
   "homepage": "https://github.com/adorsys/npm-timestamp-generator#readme",
   "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-stage-2": "6.24.1",
     "codecov": "2.2.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "ghooks": "2.0.0",
     "onchange": "3.2.1",
+    "rimraf": "2.6.1",
     "semantic-release": "^6.3.6",
     "tap": "10.3.3",
     "testdouble": "3.0.0"

@@ -1,4 +1,6 @@
-const { generateTimestamp } = require('./index');
+require('babel-polyfill');
+
+const { generateTimestamp } = require('../dist/index');
 const t = require('tap');
 const td = require('testdouble');
 
