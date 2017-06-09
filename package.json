@@ -9,6 +9,14 @@
     "test:watch": "onchange 'src/*.js' -i -- npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/adorsys/npm-timestamp-generator.git"
@@ -26,12 +34,10 @@
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
+    "ghooks": "2.0.0",
     "onchange": "3.2.1",
     "semantic-release": "^6.3.6",
     "tap": "10.3.3",
     "testdouble": "3.0.0"
-  },
-  "czConfig": {
-    "path": "nnode_modules/cz-conventional-changelog"
   }
 }
