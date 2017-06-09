@@ -8,6 +8,7 @@
     "coverage": "npm run test -- --cov --coverage-report=text",
     "coverage:html": "npm run test -- --cov --coverage-report=html",
     "coverage:check": "npm run coverage -- --check-coverage --100",
+    "coverage:report": "cat ./coverage/lcov.info | codecov",
     "test": "tap src/*.test.js -Rspec",
     "test:watch": "onchange 'src/*.js' -i -- npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -35,6 +36,7 @@
   },
   "homepage": "https://github.com/adorsys/npm-timestamp-generator#readme",
   "devDependencies": {
+    "codecov.io": "0.1.6",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "ghooks": "2.0.0",

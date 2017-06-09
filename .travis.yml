@@ -11,6 +11,7 @@ before_script:
 script:
   - npm run coverage:check
 after_success:
+  - npm run coverage:report
   - npm run semantic-release
 branches:
   except:
