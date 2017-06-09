@@ -1,15 +1,17 @@
 {
   "name": "a-timestamp-generator",
-  "version": "0.0.1",
+  "version": "0.0.0-sementically-released",
   "description": "A generator for timestamps",
   "main": "src/index.js",
   "scripts": {
+    "commit": "git-cz ",
     "test": "tap src/*.test.js -Rspec",
-    "test:watch": "onchange 'src/*.js' -i -- npm test"
+    "test:watch": "onchange 'src/*.js' -i -- npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adorsys/npm-timestamp-generator.git"
+    "url": "https://github.com/adorsys/npm-timestamp-generator.git"
   },
   "keywords": [
     "generator",
@@ -22,8 +24,14 @@
   },
   "homepage": "https://github.com/adorsys/npm-timestamp-generator#readme",
   "devDependencies": {
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
     "onchange": "3.2.1",
+    "semantic-release": "^6.3.6",
     "tap": "10.3.3",
     "testdouble": "3.0.0"
+  },
+  "czConfig": {
+    "path": "nnode_modules/cz-conventional-changelog"
   }
 }
