@@ -11,8 +11,8 @@
     "coverage": "tap --coverage-report=html",
     "coverage:check": "tap --coverage-report=lcov --check-coverage --100",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
-    "lint": "eslint src/*.js",
-    "test": "npm run build && tap src/*.test.js -Rspec",
+    "lint": "npm run build && eslint src/*.js",
+    "test": "npm run lint && tap src/*.test.js -Rspec",
     "test:watch": "onchange 'src/*.js' -i -- npm t",
     "test:coverage": "npm t -- --cov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
