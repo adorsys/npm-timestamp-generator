@@ -11,6 +11,7 @@
     "coverage": "tap --coverage-report=html",
     "coverage:check": "tap --coverage-report=lcov --check-coverage --100",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
+    "lint": "eslint src/*.js",
     "test": "npm run build && tap src/*.test.js -Rspec",
     "test:watch": "onchange 'src/*.js' -i -- npm t",
     "test:coverage": "npm t -- --cov",
@@ -21,7 +22,7 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run test:coverage && npm run coverage:check"
+      "pre-commit": "npm run lint && npm run test:coverage && npm run coverage:check"
     }
   },
   "repository": {
@@ -51,8 +52,11 @@
     "codecov": "2.2.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
+    "eslint": "3.19.0",
+    "eslint-config-adorsys": "1.0.0",
     "ghooks": "2.0.0",
     "onchange": "3.2.1",
+    "prettier": "1.4.4",
     "rimraf": "2.6.1",
     "semantic-release": "^6.3.6",
     "tap": "10.3.3",
