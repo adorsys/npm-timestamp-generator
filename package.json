@@ -4,13 +4,14 @@
   "description": "A generator for timestamps",
   "main": "src/index.js",
   "scripts": {
+    "clean": "rm -rf coverage .nyc_output",
     "commit": "git-cz ",
-    "coverage": "npm run test -- --cov --coverage-report=text",
-    "coverage:html": "npm run test -- --cov --coverage-report=html",
-    "coverage:check": "npm run coverage -- --check-coverage --100",
+    "coverage": "tap --coverage-report=html",
+    "coverage:check": "tap --coverage-report=lcov --check-coverage --100",
     "coverage:report": "cat ./coverage/lcov.info | codecov",
     "test": "tap src/*.test.js -Rspec",
     "test:watch": "onchange 'src/*.js' -i -- npm test",
+    "test:coverage": "tap src/*.test.js -Rspec --cov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
@@ -18,7 +19,7 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run coverage:check"
+      "pre-commit": "npm run test:coverage && npm run coverage:check"
     }
   },
   "repository": {
@@ -36,7 +37,7 @@
   },
   "homepage": "https://github.com/adorsys/npm-timestamp-generator#readme",
   "devDependencies": {
-    "codecov.io": "0.1.6",
+    "codecov": "2.2.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "ghooks": "2.0.0",
