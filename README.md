@@ -28,4 +28,4 @@ firstTimestamp < secondTimestamp // is always true
 
 ## Tests
 
-To run the test. First install dev dependencies with `npm install`, then run `npm test`.
+First install dev dependencies with `npm install`, then run `npm test`.
