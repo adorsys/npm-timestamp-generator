@@ -9,6 +9,9 @@
 
 A generator for creating timestamps.
 
+## Homepage
+[https://adorsys.github.io/npm-timestamp-generator/](https://adorsys.github.io/npm-timestamp-generator/)
+
 ## Installation
 
 ````
