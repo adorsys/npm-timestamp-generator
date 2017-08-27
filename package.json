@@ -16,7 +16,7 @@
     "url": "https://github.com/adorsys/npm-timestamp-generator.git"
   },
   "bugs": {
-    "url": "https://github.com/adorsys/npm-nonce-generator/issues"
+    "url": "https://github.com/adorsys/npm-timestamp-generator/issues"
   },
   "license": "MIT",
   "engines": {
